@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>		 <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>		 <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Smart Answer Builder prototype</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+    body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+    legend {
+        border-top: 1px solid #e5e5e5;
+        border-bottom: none;
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="#">GOV.UK &ensp; Smart Answer Builder</a> &ensp; <a href="v1-1.html"><button type="button" class="btn btn-primary">Show blank</button></a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+<form>
+<fieldset>
+    <div class="row">
+        <div class="span8">
+            <legend>Start page</legend>
+
+            <label>Title</label>
+            <input type="text" class="span8" value="Exchange a foreign driving licence">
+
+            <label>Description</label>
+            <textarea rows="3" class="span8">Use this tool to see if you can exchange your foreign driving licence for a British licence.</textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span8">
+            <legend>Question 1
+                <button type="button" class="btn btn-link pull-right">
+                    &nbsp;
+                </button>
+                <button type="button" class="btn btn-link pull-right">
+                    <i class="icon-move"></i>
+                </button>
+            </legend>
+            
+            <input type="text" class="span8" value="Are you a resident of Great Britain?">
+
+            <input type="text" class="span8" value="You're normally a resident if you have a permanent address in Great Britain.">
+
+            <label class="radio">
+                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" disabled>
+                <input type="text" class="span4" value="Yes">
+                <i class="icon-arrow-right"></i>
+                <div class="btn-group">
+                    <button class="btn dropdown-toggle" data-toggle="dropdown">
+                        Question 2
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Outcome 1</a></li>
+                        <li><a href="#">Question 2</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="icon-plus-sign"></i> Add question</a></li>
+                        <li><a href="#"><i class="icon-plus-sign"></i> Add outcome</a></li>
+                    </ul>
+                </div>
+            </label>
+
+            <label class="radio">
+                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" disabled>
+                <input type="text" class="span4" value="No">
+                <i class="icon-arrow-right"></i>
+                <div class="btn-group">
+                    <button class="btn dropdown-toggle" data-toggle="dropdown">
+                        Outcome 1
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Outcome 1</a></li>
+                        <li><a href="#">Question 2</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="icon-plus-sign"></i> Add question</a></li>
+                        <li><a href="#"><i class="icon-plus-sign"></i> Add outcome</a></li>
+                    </ul>
+                </div>
+            </label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span8">
+            <legend>Outcome 1
+                <button type="button" class="btn btn-link pull-right">
+                    <i class="icon-remove"></i>
+                </button>
+                <button type="button" class="btn btn-link pull-right">
+                    <i class="icon-move"></i>
+                </button>
+            </legend>
+            
+            <input type="text" class="span8" value="Sorry, you can't exchange your driving licence because you're not a resident of Great Britain.">
+
+            <input type="text" class="span8" value="You may be able to drive in the UK for up to 12 months on your foreign licence.">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span8">
+            <legend>Question 2
+                <button type="button" class="btn btn-link pull-right">
+                    <i class="icon-remove"></i>
+                </button>
+                <button type="button" class="btn btn-link pull-right">
+                    <i class="icon-move"></i>
+                </button>
+            </legend>
+            
+            <input type="text" class="span8" value="What kind of licence do you have?">
+
+            <input type="text" class="span8" value="Your licence will say on it what type of vehicles you can drive.">
+
+            <label class="radio">
+                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" disabled>
+                <input type="text" class="span4" value="Car or motorcycle">
+                <i class="icon-arrow-right"></i>
+                <div class="btn-group">
+                    <button class="btn dropdown-toggle" data-toggle="dropdown">
+                        Select destination
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="icon-plus-sign"></i> Add question</a></li>
+                        <li><a href="#"><i class="icon-plus-sign"></i> Add outcome</a></li>
+                    </ul>
+                </div>
+            </label>
+
+            <label class="radio">
+                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" disabled>
+                <input type="text" class="span4" value="Lorry, bus or minibus">
+                <i class="icon-arrow-right"></i>
+                <div class="btn-group">
+                    <button class="btn dropdown-toggle" data-toggle="dropdown">
+                        Select destination
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="icon-plus-sign"></i> Add question</a></li>
+                        <li><a href="#"><i class="icon-plus-sign"></i> Add outcome</a></li>
+                    </ul>
+                </div>
+            </label>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="span8">
+            <button type="button" class="btn btn-primary"><i class="icon-plus-sign icon-white"></i> Add question</button>
+            <button type="button" class="btn btn-danger"><i class="icon-plus-sign icon-white"></i> Add outcome</button>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="span8">
+            <button type="submit" class="btn btn-large btn-success">Publish</button> &ensp;
+            <button type="button" class="btn btn-large btn-info">Save draft</button>
+        </div>
+    </div>
+
+</fieldset>
+</form>
+
+<hr>
+
+<footer>
+    <p>GOV.UK &ensp; Smart Answer Builder</p>
+</footer>
+
+</div> <!-- /container -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+<script src="js/vendor/bootstrap.min.js"></script>
+
+</body>
+</html>
