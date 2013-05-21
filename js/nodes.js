@@ -13,9 +13,14 @@ var optionsForNode = function(index) {
   for(var i = 0; i < window.nodes.length; i++) {
     var current = window.nodes[i];
     if((current.type == "question" && current.index > index) || current.type == "outcome") {
+      var title = (current.type == "question" ? "Question " : "Outcome ") + current.index;
+      if(current.title != "") {
+        title += " (" + current.title + ")";
+      }
       options.push({
+        type: current.type,
         key: current.type + current.index,
-        title: current.type + current.index + "(" + current.title + ")"
+        title: title
       });
     }
   }

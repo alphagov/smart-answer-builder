@@ -123,10 +123,17 @@
     <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" disabled>
     <input type="text" class="span4" placeholder="Option A" value="{{ text }}">
     <i class="icon-arrow-right"></i>
-    <select name="destination">
-      {{#each options}}
-        <option value="{{key}}" {{selected}}>{{title}}</li>
-      {{/each}}
+    <select name="destination" class="span3">
+      <optgroup label="Questions">
+        {{#each option_questions}}
+          <option value="{{key}}" {{selected}}>{{title}}</li>
+        {{/each}}
+      </optgroup>
+      <optgroup label="Outcomes">
+        {{#each option_outcomes}}
+          <option value="{{key}}" {{selected}}>{{title}}</li>
+        {{/each}}
+      </optgroup>
     </select>
 </label>
 </script>

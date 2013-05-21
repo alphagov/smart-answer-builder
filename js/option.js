@@ -13,7 +13,18 @@ Option.prototype = {
       }
       options.push(opts[i]);
     };
-    return JST.option({ options: options, index: this.index, text: this.text });
+    var questions = $.grep(options, function(elem) {
+      return elem.type === "question";
+    });
+    var outcomes = $.grep(options, function(elem) {
+      return elem.type === "outcome";
+    });
+    return JST.option({ 
+      option_questions: questions,
+      option_outcomes: outcomes,
+      index: this.index,
+      text: this.text 
+    });
   },
   bindInputs: function() {
     var self = this;

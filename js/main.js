@@ -59,10 +59,11 @@ $(function() {
       var current = window.nodes[i];
       SA.nodes[current.type + current.index] = {
         title: current.title,
-        desc: current.bodyText,
-        options: { }
+        desc: current.bodyText
       };
+      console.log(current.type);
       if(current.type === "question") {
+        SA.nodes[current.type + current.index].options = {};
         for(var j = 0; j < current.options.length; j++) {
           var opt = current.options[j];
           if(opt.text != "" && opt.destination != "") {
@@ -71,6 +72,12 @@ $(function() {
         }
       }
     };
-    var text = $("textarea").val(JSON.stringify(SA)).appendTo("body");
+    $(".json-resp").remove();
+    $(this).after($("<textarea></textarea>", {
+      "class": "span12 json-resp",
+      "height": "300px"
+    }).val(JSON.stringify(SA, null, 4)).wrap("<div />", {
+      "class": "row"
+    }));
   });
 });
