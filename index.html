@@ -45,10 +45,10 @@
             <legend>Start page</legend>
 
             <label>Title</label>
-            <input type="text" class="span8">
+            <input type="text" class="span8" name="main-title">
 
             <label>Description</label>
-            <textarea rows="3" class="span8"></textarea>
+            <textarea rows="3" class="span8" name="main-desc"></textarea>
         </div>
     </div>
     <div id="question-placeholder"></div>
@@ -74,6 +74,8 @@
 </fieldset>
 </form>
 
+<a class="generateJSON">Generate a JSON representation of the Smart Answer</a>
+
 <hr>
 
 <footer>
@@ -91,34 +93,15 @@
             </button>
         </legend>
         
-        <input type="text" class="span8" placeholder="The title of the outcome">
+        <input type="text" class="span8" name="title" placeholder="The title of the outcome" value="{{ title }}">
 
-        <input type="text" class="span8" placeholder="Optional extra information">
+        <input type="text" class="span8" name="description" placeholder="Optional extra information" value="{{ desc }}">
     </div>
 </div>
 </script>
 
-<script type="text/x-handlebars" id="option_template">
-<label class="radio outcome-wrap">
-    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" disabled>
-    <input type="text" class="span4" placeholder="Option A">
-    <i class="icon-arrow-right"></i>
-    <div class="btn-group">
-        <button class="btn dropdown-toggle" data-toggle="dropdown">
-            Select destination
-            <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          {{#each questions}}
-            <li rel="{{key}}"><a href="#">{{title}}</a></li>
-          {{/each}}
-        </ul>
-
-    </div>
-</label>
-</script>
 <script type="text/x-handlebars" id="question_template">
-<div class="row" id="question-{{ number }}">
+<div class="row" id="{{type}}-{{ number }}">
     <div class="span8">
         <legend>Question {{ number }}
             {{#if notFirstQuestion}}
@@ -127,13 +110,25 @@
             </button>
             {{/if}}
           </legend>
-        <input type="text" class="span8" name="title" placeholder="e.g. Are you a British citizen?">
-
-        <input type="text" class="span8" placeholder="Optional extra information">
-        {{{ options }}}
-
+        <input type="text" class="span8" name="title" placeholder="e.g. Are you a British citizen?" value="{{title}}">
+        <input type="text" class="span8" name="description" value="{{desc}}" placeholder="Optional extra information">
+      {{{ options }}}
+      <a class="add-new-option">Add new option</a>
     </div>
 </div>
+</script>
+
+<script type="text/x-handlebars" id="option_template">
+<label class="radio outcome-wrap" id="option-{{ index }}">
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" disabled>
+    <input type="text" class="span4" placeholder="Option A" value="{{ text }}">
+    <i class="icon-arrow-right"></i>
+    <select name="destination">
+      {{#each options}}
+        <option value="{{key}}" {{selected}}>{{title}}</li>
+      {{/each}}
+    </select>
+</label>
 </script>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -141,6 +136,9 @@
 
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/vendor/handlebars.min.js"></script>
+<script src="js/nodes.js"></script>
+<script src="js/option.js"></script>
+<script src="js/node.js"></script>
 <script src="js/main.js"></script>
 
 </body>
