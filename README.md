@@ -1,6 +1,7 @@
 #Smart answer builder
 
 This is a tool to build simple 'smart answers' for GOV.UK.
+
 Example smart answer: www.gov.uk/exchange-a-foreign-driving-licence
 
 ## What is a 'simple' smart answer?
